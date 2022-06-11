@@ -1,38 +1,107 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Blaka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+body{
+  background-image:url(https://us.123rf.com/450wm/sn333g/sn333g1901/sn333g190100400/115836023-stem-education-vector-colorful-frame-with-dark-background.jpg?ver=6) ;
+}
+
+h1{
   text-align: center;
+  font-size: 70px;
+  font-family: 'Blaka', cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.calculator {
+  border-style: groove;
+  border-width: 10px;
+  border-color: rgb(0, 76, 255);
+  background-color: rgba(97, 43, 106, 0.621);
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+}
+.calculator-screen {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 50px;
+  height: 100px;
+  border: none;
+  background-color: #772febaf;
+  color: rgb(253, 0, 173);
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button{
+  font-family: 'Kanit', sans-serif;
+  font-size: 60px;
+  width: 90px;
+  height: 90px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: rgb(31, 7, 246);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+button:active {
+  color: #000
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.glow-on-hover:active:after {
+  background: transparent;
 }
+
+button:hover:before {
+  opacity: 1;
+}
+
+button:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(17, 17, 17);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.operator {
+  color: rgb(166, 0, 255);
+}
+.calculator-keys {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+

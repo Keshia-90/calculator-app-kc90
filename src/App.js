@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div className="App calculator">
       <h1>Calculator App</h1>
-      <h2 className="calculator-screen">
+      <h2 data-testid="display">
         {input}
       </h2>
       <Operators handleClick={handleClick} />

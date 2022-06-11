@@ -23,7 +23,7 @@ h1{
   transform: translate(-50%, -50%);
   width: 400px;
 }
-.calculator-screen {
+h2 {
   font-family: 'Abril Fatface', cursive;
   font-size: 50px;
   height: 100px;
